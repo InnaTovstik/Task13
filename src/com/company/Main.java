@@ -3,15 +3,10 @@ package com.company;
 //5*. Посчитать сколько минут длились весна, лето, осень и зима в 1965 году
 
 import java.time.Duration;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
-import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
-
-
 
 public class Main {
 
@@ -29,7 +24,7 @@ public class Main {
         System.out.println(" дней - " + ChronoUnit.DAYS.between(startLessonTuesday, finishLessonSaturday) +
                 " часов - , " + ChronoUnit.MINUTES.between(startLessonTuesday, finishLessonSaturday) +
                 " минут - , " + ChronoUnit.HOURS.between(startLessonTuesday, finishLessonSaturday) +
-                " секунд - " + ChronoUnit.SECONDS.between(startLessonTuesday, finishLessonSaturday) );
+                " секунд - " + ChronoUnit.SECONDS.between(startLessonTuesday, finishLessonSaturday));
 
         // Вариант с Duration для сравнения))))
         System.out.println("Между началом лекции во вторник и концом лекции в субботу проходит: ");
