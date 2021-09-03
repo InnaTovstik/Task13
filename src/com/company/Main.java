@@ -66,7 +66,7 @@ public class Main {
         long minutesInSpring = MINUTES.between(startSpring65, startSummer65);
         long minutesInSummer = MINUTES.between(startSummer65, startAutumn65);
         long minutesInAutumn = MINUTES.between(startAutumn65, finishWinter65);
-        long year65 = minutesInAutumn + minutesInSpring + minutesInWinter + minutesInSummer;
+
         System.out.println("Зима в 1965 году длилась " + minutesInWinter + " минут");
         System.out.println("Весна в 1965 году длилась " + minutesInSpring + " минут");
         System.out.println("Лето в 1965 году длилось " + minutesInSummer + " минут");
