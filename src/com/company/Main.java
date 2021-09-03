@@ -4,7 +4,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
+import static java.time.temporal.ChronoUnit.*;
 
 public class Main {
 
@@ -19,10 +19,10 @@ public class Main {
         LocalDateTime finishLessonSaturday = LocalDateTime.of(2021, Month.SEPTEMBER, 4, 18, 0);
 
         System.out.println("Между началом лекции во вторник и концом лекции в субботу проходит: ");
-        System.out.println(" дней - " + ChronoUnit.DAYS.between(startLessonTuesday, finishLessonSaturday) +
-                " часов - , " + ChronoUnit.MINUTES.between(startLessonTuesday, finishLessonSaturday) +
-                " минут - , " + ChronoUnit.HOURS.between(startLessonTuesday, finishLessonSaturday) +
-                " секунд - " + ChronoUnit.SECONDS.between(startLessonTuesday, finishLessonSaturday));
+        System.out.println(" дней - " + DAYS.between(startLessonTuesday, finishLessonSaturday) +
+                " часов - , " + MINUTES.between(startLessonTuesday, finishLessonSaturday) +
+                " минут - , " + HOURS.between(startLessonTuesday, finishLessonSaturday) +
+                " секунд - " + SECONDS.between(startLessonTuesday, finishLessonSaturday));
         System.out.println("Задание 1 (вариант с Duration)");
         // Вариант с Duration для сравнения))))
         System.out.println("Между началом лекции во вторник и концом лекции в субботу проходит: ");
@@ -49,7 +49,7 @@ public class Main {
         // 4.	С помощью класса DateTimeFormatter форматировать дату в строку вида "23:56 2001/15/01"
         // (часы:минуты год/месяц/день)
         System.out.println("Задание 4");
-        DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("HH:mm yyyy/dd/MM");
+        DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("HH:mm yyyy/MM/dd");
         LocalDateTime dateTime = LocalDateTime.of(2001, Month.JANUARY, 15, 23, 56);
         System.out.println("Дата преобразована в строку : " + dateTime.format(dtf1));
 
@@ -62,16 +62,14 @@ public class Main {
         LocalDateTime finishWinter65 = LocalDateTime.of(1965, Month.DECEMBER, 1, 0, 0);
         LocalDateTime startWinter66 = LocalDateTime.of(1966, Month.JANUARY, 1, 0, 0);
 
-        long minutesInWinter = ChronoUnit.MINUTES.between(startWinter65, startSpring65) + ChronoUnit.DAYS.between(finishWinter65, startWinter66);
-        long minutesInSpring = ChronoUnit.MINUTES.between(startSpring65, startSummer65);
-        long minutesInSummer = ChronoUnit.MINUTES.between(startSummer65, startAutumn65);
-        long minutesInAutumn = ChronoUnit.MINUTES.between(startAutumn65, finishWinter65);
+        long minutesInWinter = MINUTES.between(startWinter65, startSpring65) + DAYS.between(finishWinter65, startWinter66);
+        long minutesInSpring = MINUTES.between(startSpring65, startSummer65);
+        long minutesInSummer = MINUTES.between(startSummer65, startAutumn65);
+        long minutesInAutumn = MINUTES.between(startAutumn65, finishWinter65);
         long year65 = minutesInAutumn + minutesInSpring + minutesInWinter + minutesInSummer;
         System.out.println("Зима в 1965 году длилась " + minutesInWinter + " минут");
         System.out.println("Весна в 1965 году длилась " + minutesInSpring + " минут");
         System.out.println("Лето в 1965 году длилось " + minutesInSummer + " минут");
         System.out.println("Осень в 1965 году длилась " + minutesInAutumn + " минут");
-        System.out.println("Длина 1965 года " + year65 + " минут");
-
     }
 }
