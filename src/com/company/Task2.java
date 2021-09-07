@@ -10,7 +10,7 @@ public class Task2 {
         System.out.println("Задание 2");
         System.out.println("Количество минут в лекции - " +
                 Duration.between(startLessonTuesday, finishLesson).toMinutes()
-                + " и секунд - " + Duration.between(startLessonTuesday, finishLesson).toMinutes() * 60);
-
+                + " и секунд - "
+                + Duration.between(startLessonTuesday, finishLesson).toMinutes() * 60);
     }
 }

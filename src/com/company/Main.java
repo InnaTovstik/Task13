@@ -2,12 +2,10 @@ package com.company;
 
 import java.time.LocalDateTime;
 import java.time.Month;
-import java.time.format.DateTimeFormatter;
-import static java.time.temporal.ChronoUnit.*;
 
 public class Main {
 
-   public static void main(String[] args) {
+    public static void main(String[] args) {
 
         LocalDateTime startLessonTuesday = LocalDateTime.of(2021, Month.AUGUST, 31, 20, 0);
         LocalDateTime finishLessonSaturday = LocalDateTime.of(2021, Month.SEPTEMBER, 4, 18, 0);
@@ -20,6 +18,5 @@ public class Main {
         Task3.parseString(dateInString);
         Task4.formatData(dateTime);
         Task5.findDurationSeason(1965);
-
     }
 }
